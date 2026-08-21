@@ -52,7 +52,7 @@ body{padding:0;position:relative}
 }
 
 /* ============================================================
-   HEADER — silent geometric mark + tight type
+   HEADER, silent geometric mark + tight type
    ============================================================ */
 header{
   text-align:center;
@@ -82,7 +82,7 @@ header p{
 }
 
 /* ============================================================
-   TABS — single hairline, minimal
+   TABS, single hairline, minimal
    ============================================================ */
 .tabs{
   display:flex;justify-content:center;gap:0;
@@ -127,7 +127,7 @@ header p{
 }
 
 /* ============================================================
-   QUOTE DISPLAY — the heart. Sans-serif. Massive air.
+   QUOTE DISPLAY, the heart. Sans-serif. Massive air.
    ============================================================ */
 .quote-display{
   text-align:left;
@@ -199,7 +199,7 @@ header p{
 .reflection-area textarea::placeholder{color:var(--ink-faint)}
 
 /* ============================================================
-   ACTIONS — minimal type buttons
+   ACTIONS, minimal type buttons
    ============================================================ */
 .actions{
   display:flex;gap:32px;justify-content:flex-start;align-items:center;
@@ -262,7 +262,7 @@ button:hover{color:var(--jade)}
 #all-search:focus{border-bottom-color:var(--jade)}
 
 /* ============================================================
-   QUOTE CARDS — for favorites + all views
+   QUOTE CARDS, for favorites + all views
    ============================================================ */
 .quote-card{
   padding:32px 0;border-bottom:1px solid var(--rule);
@@ -294,7 +294,7 @@ button:hover{color:var(--jade)}
 }
 
 /* ============================================================
-   STATS VIEW — pure grid, no italics
+   STATS VIEW, pure grid, no italics
    ============================================================ */
 #solomon-stats-grid{
   display:grid;grid-template-columns:repeat(auto-fit, minmax(120px, 1fr));
@@ -341,7 +341,7 @@ button:hover{color:var(--jade)}
 }
 
 /* ============================================================
-   FOOTER — minimal
+   FOOTER, minimal
    ============================================================ */
 footer{
   text-align:left;
@@ -461,7 +461,7 @@ footer a:hover{border-bottom-color:var(--jade)}
 <footer>
   <p>The opposite of doom-scrolling.<br>
   <a href="https://github.com/thebigjah/solomon">source</a></p>
-  <div class="credit">— PURCELLVENTURES.CO —</div>
+  <div class="credit">, PURCELLVENTURES.CO,</div>
 </footer>
 
 </div>
@@ -469,7 +469,7 @@ footer a:hover{border-bottom-color:var(--jade)}
 <!-- Hidden tradition glyphs reusable from JS -->
 <svg style="display:none" xmlns="http://www.w3.org/2000/svg">
   <symbol id="glyph-proverbs" viewBox="0 0 20 20">
-    <!-- Olive branch — Hebrew wisdom tradition -->
+    <!-- Olive branch, Hebrew wisdom tradition -->
     <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
       <path d="M 4 16 Q 8 12 16 4"/>
       <ellipse cx="7" cy="13" rx="2.5" ry="1.2" transform="rotate(-30 7 13)" fill="currentColor" opacity="0.5"/>
@@ -485,7 +485,7 @@ footer a:hover{border-bottom-color:var(--jade)}
     </g>
   </symbol>
   <symbol id="glyph-classical" viewBox="0 0 20 20">
-    <!-- Owl / Athena's wisdom — simple geometric -->
+    <!-- Owl / Athena's wisdom, simple geometric -->
     <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
       <circle cx="6" cy="9" r="3"/>
       <circle cx="14" cy="9" r="3"/>
@@ -496,7 +496,7 @@ footer a:hover{border-bottom-color:var(--jade)}
     </g>
   </symbol>
   <symbol id="glyph-modern" viewBox="0 0 20 20">
-    <!-- Three lines / waveform — modern voice -->
+    <!-- Three lines / waveform, modern voice -->
     <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
       <line x1="3" y1="6" x2="17" y2="6"/>
       <line x1="3" y1="10" x2="13" y2="10"/>
@@ -548,7 +548,7 @@ const QUOTES = [
   // Classical (pre-Christian + early)
   { type:'classical', text:'The unexamined life is not worth living.', source:'Socrates, from Plato\'s Apology' },
   { type:'classical', text:'We suffer more in imagination than in reality.', source:'Seneca, Letters to Lucilius' },
-  { type:'classical', text:'You have power over your mind — not outside events. Realize this, and you will find strength.', source:'Marcus Aurelius, Meditations' },
+  { type:'classical', text:'You have power over your mind, not outside events. Realize this, and you will find strength.', source:'Marcus Aurelius, Meditations' },
   { type:'classical', text:'It is not death that a man should fear, but he should fear never beginning to live.', source:'Marcus Aurelius' },
   { type:'classical', text:'No man ever steps in the same river twice, for it\'s not the same river and he\'s not the same man.', source:'Heraclitus' },
   { type:'classical', text:'Time is the wisest of all counselors.', source:'Plutarch' },
@@ -611,7 +611,7 @@ function renderQuote() {
   document.getElementById('quote-display').innerHTML = `
     <span class="source-tag ${q.type}">${tradGlyph(q.type)} ${tradLabel(q.type)}</span>
     <div class="quote-text">${escapeHtml(q.text)}</div>
-    <div class="quote-source">— ${escapeHtml(q.source)}</div>
+    <div class="quote-source">, ${escapeHtml(q.source)}</div>
     ${q.context ? `<div class="quote-context">${escapeHtml(q.context)}</div>` : ''}
   `;
   document.getElementById('reflection').value = reflection;
@@ -657,7 +657,7 @@ function renderQuoteCard(idx) {
         ${isFav ? '<span style="color:var(--saffron);font-size:14px">★</span>' : ''}
       </div>
       <div class="text">${escapeHtml(q.text)}</div>
-      <div class="src">— ${escapeHtml(q.source)}</div>
+      <div class="src">, ${escapeHtml(q.source)}</div>
       ${reflection ? `<div class="reflection">${escapeHtml(reflection)}</div>` : ''}
       <div style="margin-top:14px;">
         <button class="ghost" onclick="goTo(${idx})" style="padding:6px 12px;font-size:10px;letter-spacing:0.2em">Open</button>
@@ -766,7 +766,7 @@ function renderStats() {
     const idx = QUOTES.findIndex((q, i) => quoteKey(i) === k);
     const q = idx >= 0 ? QUOTES[idx] : null;
     document.getElementById('solomon-recent-reflection').innerHTML = q
-      ? `<div style="font-style:italic;color:var(--ink-soft);margin-bottom:14px">"${escapeHtml(q.text.length > 200 ? q.text.slice(0, 200) + '…' : q.text)}"<br><span style="font-family:var(--mono);font-style:normal;font-size:10px;letter-spacing:0.18em;color:var(--ink-faint);margin-top:6px;display:block;text-transform:uppercase">— ${escapeHtml(q.source)}</span></div><div style="border-left:2px solid var(--saffron);padding-left:16px;color:var(--ink);font-family:var(--display);font-style:italic">${escapeHtml(reflections[k])}</div>`
+      ? `<div style="font-style:italic;color:var(--ink-soft);margin-bottom:14px">"${escapeHtml(q.text.length > 200 ? q.text.slice(0, 200) + '…' : q.text)}"<br><span style="font-family:var(--mono);font-style:normal;font-size:10px;letter-spacing:0.18em;color:var(--ink-faint);margin-top:6px;display:block;text-transform:uppercase">, ${escapeHtml(q.source)}</span></div><div style="border-left:2px solid var(--saffron);padding-left:16px;color:var(--ink);font-family:var(--display);font-style:italic">${escapeHtml(reflections[k])}</div>`
       : '<div class="empty">Quote unresolved.</div>';
   } else {
     document.getElementById('solomon-recent-reflection').innerHTML = '<div class="empty">No reflections yet. Save one on a quote that speaks to you, then come back.</div>';
